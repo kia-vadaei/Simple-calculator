@@ -1,0 +1,14 @@
+C:\Users\Padidar\Desktop\DS_P4roj3_Calulator\DS_P4roj3_Calulator\obj\Debug\DS_P4roj3_Calulator.csproj.AssemblyReference.cache
+C:\Users\Padidar\Desktop\DS_P4roj3_Calulator\DS_P4roj3_Calulator\obj\Debug\DS_P4roj3_Calulator.csproj.SuggestedBindingRedirects.cache
+C:\Users\Padidar\Desktop\DS_P4roj3_Calulator\DS_P4roj3_Calulator\obj\Debug\DS_P4roj3_Calulator.Form1.resources
+C:\Users\Padidar\Desktop\DS_P4roj3_Calulator\DS_P4roj3_Calulator\obj\Debug\DS_P4roj3_Calulator.csproj.GenerateResource.cache
+C:\Users\Padidar\Desktop\DS_P4roj3_Calulator\DS_P4roj3_Calulator\obj\Debug\DS_P4roj3_Calulator.csproj.CoreCompileInputs.cache
+C:\Users\Padidar\Desktop\DS_P4roj3_Calulator\DS_P4roj3_Calulator\bin\Debug\DevComponents.DotNetBar2.dll
+C:\Users\Padidar\Desktop\DS_P4roj3_Calulator\DS_P4roj3_Calulator\bin\Debug\DevComponents.DotNetBar2.xml
+C:\Users\Padidar\Desktop\DS_P4roj3_Calulator\DS_P4roj3_Calulator\obj\Debug\DS_P4roj3_Calulator.csproj.CopyComplete
+C:\Users\Padidar\Desktop\DS_P4roj3_Calulator\DS_P4roj3_Calulator\bin\Debug\DS_Proj3_Calulator.exe.config
+C:\Users\Padidar\Desktop\DS_P4roj3_Calulator\DS_P4roj3_Calulator\bin\Debug\DS_Proj3_Calulator.exe
+C:\Users\Padidar\Desktop\DS_P4roj3_Calulator\DS_P4roj3_Calulator\bin\Debug\DS_Proj3_Calulator.pdb
+C:\Users\Padidar\Desktop\DS_P4roj3_Calulator\DS_P4roj3_Calulator\obj\Debug\DS_Proj3_Calulator.Properties.Resources.resources
+C:\Users\Padidar\Desktop\DS_P4roj3_Calulator\DS_P4roj3_Calulator\obj\Debug\DS_Proj3_Calulator.exe
+C:\Users\Padidar\Desktop\DS_P4roj3_Calulator\DS_P4roj3_Calulator\obj\Debug\DS_Proj3_Calulator.pdb
