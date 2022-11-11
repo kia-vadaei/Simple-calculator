@@ -78,6 +78,10 @@ namespace DS_P4roj3_Calulator
                     phrase = display_txt1.Text;
                     phrase = MySetting.MySettings.infToPos(phrase);
                     Console.WriteLine(phrase);
+
+                    result = MySetting.MySettings.calcute(phrase);
+                    display_txt2.Text = result.ToString();
+
                 }
 
                 else

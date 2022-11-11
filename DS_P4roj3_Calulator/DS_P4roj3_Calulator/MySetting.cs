@@ -1,4 +1,5 @@
-﻿using DS_Proj3_Calculator;
+﻿using DevComponents.DotNetBar;
+using DS_Proj3_Calculator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,10 +39,16 @@ namespace DS_Proj3_Calulator
                         result += c;
 
                     else if (c == '(')
+                    {
+                        if (c == ' ')
+                            continue;
                         stack.Push(c);
+                    }
 
                     else if (c == ')')
                     {
+                        if (c == ' ')
+                            continue;
                         while (stack.getSize() > 0 && stack.Peek() != '(')
                             result += stack.Pop();
 
@@ -52,8 +59,11 @@ namespace DS_Proj3_Calulator
                     }
                     else
                     {
+                        if (c == ' ')
+                            continue;
                         while (stack.getSize() > 0 && Op(c) <= Op(stack.Peek()))
                             result += stack.Pop();
+                        result += ' ';
                         stack.Push(c);
                     }
                 }
@@ -65,23 +75,62 @@ namespace DS_Proj3_Calulator
                 return result;
             }
 
-            //public static double calcute(string phrase)
-            //{
-            //    MyStack<string> stack = new MyStack<string>();
-            //    for (int i = 0; i < phrase.Length; i++)
-            //    {
-            //        char c = phrase[i];
-            //        if (char.IsLetterOrDigit(c))
-            //            stack.Push(c);
-            //        else
-            //        {
-            //            if(c == '+')
-            //            {
-            //                double frt = double.Parse(stack.)
-            //            }
-            //        }
-            //    }
-            //}
+            public static double calcute(string phrase)
+            {
+                MyStack<string> stack = new MyStack<string>();
+                string tmp = "";
+                int i = 0;
+                while (i < phrase.Length)
+                {
+                    char c = phrase[i];
+                    if (char.IsLetterOrDigit(c))
+                    {
+                        while (c != ' ' && char.IsLetterOrDigit(c))
+                        {
+                            tmp += c;
+                            c = phrase[i + 1];
+                            i++;
+                        }
+                        stack.Push(tmp);
+                        tmp = "";
+                    }
+                    else if (c != ' ')
+                    {
+                        if (c == '+')
+                        {
+                            double sec = double.Parse(stack.Pop());
+                            double frt = double.Parse(stack.Pop());
+                            stack.Push((frt + sec).ToString());
+                        }
+                        if (c == '✕' || c == '*')
+                        {
+                            double sec = double.Parse(stack.Pop());
+                            double frt = double.Parse(stack.Pop());
+                            stack.Push((frt * sec).ToString());
+                        }
+                        if (c == '-')
+                        {
+                            double sec = double.Parse(stack.Pop());
+                            double frt = double.Parse(stack.Pop());
+                            stack.Push((frt - sec).ToString());
+                        }
+                        if (c == '/' || c== '÷')
+                        {
+                            double sec = double.Parse(stack.Pop());
+                            double frt = double.Parse(stack.Pop());
+                            stack.Push((frt / sec).ToString());
+                        }
+
+                        i++;
+                    }
+                    else if (c == ' ')
+                        i++;
+                }
+
+                Console.WriteLine(double.Parse(stack.Peek()));
+                return double.Parse(stack.Pop());
+
+            }
         }
     }
 }
