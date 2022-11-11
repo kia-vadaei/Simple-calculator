@@ -6,20 +6,20 @@ using System.Threading.Tasks;
 
 namespace DS_Proj3_Calculator
 {
-  internal class Stack<T>
+  internal class MyStack<T>
   {
     private T[] data;
     private int top = -1;
 
-    public Stack() : this(1000)
+    public MyStack() : this(1000)
     {
     }
-    public Stack(int capacity)
+    public MyStack(int capacity)
     {
       data = new T[capacity];
     }
 
-    public int size()
+    public int getSize()
     {
       return top + 1;
     }
@@ -27,19 +27,19 @@ namespace DS_Proj3_Calculator
     {
       return top == -1;
     }
-    public void push(T d)
+    public void Push(T d)
     {
-      if (size() == data.Length) throw new Exception("stack is full");
+      if (getSize() == data.Length) throw new Exception("stack is full");
       data[++top] = d;
     }
-    public T peek()
+    public T Peek()
     {
       if (!this.isEmpty())
         return data[top];
       else
         throw new Exception("Null");
     }
-    public T pop()
+    public T Pop()
     {
       if (this.isEmpty()) throw new Exception("Null");
       T answer;

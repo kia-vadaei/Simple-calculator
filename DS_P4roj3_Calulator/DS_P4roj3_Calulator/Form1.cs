@@ -1,3 +1,5 @@
+﻿using DS_Proj3_Calculator;
+using DS_Proj3_Calulator;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,11 +14,13 @@ namespace DS_P4roj3_Calulator
 {
     public partial class Form1 : Form
     {
-    double result = 0;
-    string operation = "";
-    string fstNum, secNum;
-    bool enterValue = false;
 
+        string phrase = string.Empty;
+        double result = 0;
+        string operation = "";
+        string fstNum, secNum;
+        bool enterValue = false;
+        MyStack<char> stack = new MyStack<char>(); 
         public Form1()
         {
             InitializeComponent();
@@ -24,32 +28,65 @@ namespace DS_P4roj3_Calulator
 
         private void xit_butt_Click(object sender, EventArgs e)
         {
-      this.Close();
+            this.Close();
         }
 
-    private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
     {
 
     }
 
-    private void math_op_click(object sender, EventArgs e)
-    {
+
+        private void num_click(object sender, EventArgs e)
+        {
+            if (display_txt1.Text.Length < 14)
+            {
+                if (display_txt1.Text == "0" || enterValue)
+                    display_txt1.Text = "";
+                enterValue = false;
+                Button btn = (Button)sender;
+                if (btn.Text == ".")
+                {
+                    if (!display_txt1.Text.Contains("."))
+                        display_txt1.Text = display_txt1.Text + btn.Text;
+                }
+                else if (btn.Text == "✕" || btn.Text == "÷" || btn.Text == "+" || btn.Text == "-")
+                {
+                    try
+                    {
+                        if (display_txt1.Text.Last() != '✕' && display_txt1.Text.Last() != '÷' && display_txt1.Text.Last() != '+' && display_txt1.Text.Last() != '-' && display_txt1.Text != "0")
+                            display_txt1.Text = display_txt1.Text + btn.Text;
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("!");
+                    }
+                }
+                else if (btn.Name == "CE_butt")
+                {
+                    if (display_txt1.Text != "" && display_txt1.Text != "0")
+                    {
+                        display_txt1.Text = display_txt1.Text.Substring(0, display_txt1.Text.Length - 1);
+                        if (display_txt1.Text == String.Empty)
+                            display_txt1.Text = "0";
+                    }
+                    else
+                        display_txt1.Text = "0";
+                }
+                else if (btn.Text == "=")
+                {
+                    phrase = display_txt1.Text;
+                    phrase = MySetting.MySettings.infToPos(phrase);
+                    Console.WriteLine(phrase);
+                }
+
+                else
+                    display_txt1.Text = display_txt1.Text + btn.Text;
+            }
+        }
+
+
 
     }
-
-    private void num_click(object sender, EventArgs e)
-    {
-      if (display_txt1.Text == "0" || enterValue)
-        display_txt1.Text = "";
-      enterValue = false;
-      Button btn = (Button)sender;
-      if (btn.Text == ".")
-      {
-        if (!display_txt1.Text.Contains("."))
-          display_txt1.Text = display_txt1.Text + btn.Text;
-      }
-      else
-          display_txt1.Text = display_txt1.Text + btn.Text;
-    }
-  }
+  
 }
