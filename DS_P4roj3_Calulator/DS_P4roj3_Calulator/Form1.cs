@@ -12,6 +12,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 namespace DS_P4roj3_Calulator
 {
+    //Arthur -> Kianoosh vadaei
+    //November 9, 2022.
+    //Made for UI-DS
+    //Mini Project num.3 
     public partial class Form1 : Form
     {
 
