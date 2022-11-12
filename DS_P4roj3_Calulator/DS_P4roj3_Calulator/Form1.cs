@@ -79,24 +79,45 @@ namespace DS_P4roj3_Calulator
                 else if (btn.Text == "=")
                 {
                     phrase = display_txt1.Text;
-                    phrase = MySetting.MySettings.infToPos(phrase);
-                    if (phrase != "")
+
+                    if (!MySetting.MySettings.Parentheses_check(phrase))
                     {
-                        Console.WriteLine("Postfix is >> " + phrase);
-                        result = MySetting.MySettings.calcute(phrase);
-                        Console.WriteLine(result);
-                        if (result.ToString().Length > 14)
-                            display_txt2.Text = result.ToString().Substring(0, 14);
-                        else
-                            display_txt2.Text = result.ToString();
+                        try
+                        {
+                            throw new Exception("EP");
+                        }
+                        catch (Exception)
+                        {
+                            Console.WriteLine("ERROR_P");
+                            display_txt1.Text = "0";
+                            display_txt2.Text = "0";
+                            p_check = -1;
+                        }
                     }
                     else
                     {
-                        display_txt1.Text = "0";
-                        display_txt2.Text = "0";
-                        p_check = -1;
-                    } 
-                        
+                        phrase = MySetting.MySettings.infToPos(phrase);
+                        Console.WriteLine("Postfix is >> " + phrase);
+                        result = MySetting.MySettings.calcute(phrase);
+                        Console.WriteLine(result);
+                        if (result != -123456.123456)
+                        {
+                            if (result.ToString().Length > 14)
+                                display_txt2.Text = result.ToString().Substring(0, 14);
+                            else
+                                display_txt2.Text = result.ToString();
+                        }
+                        else
+                        {
+                            Console.WriteLine("ERROR_OP");
+                            display_txt1.Text = "0";
+                            display_txt2.Text = "0";
+                            p_check = -1;
+                        }
+                    }
+
+
+
                 }
                 else if (btn.Text == "()")
                 {

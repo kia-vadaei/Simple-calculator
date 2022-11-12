@@ -12,6 +12,37 @@ namespace DS_Proj3_Calulator
     { 
         public class MySettings
         {
+            public static bool Parentheses_check(string val)
+            {
+                string openning = "([{<";
+                string closing = ")]}>";
+                    bool check = false;
+                    Stack<char> stack = new Stack<char>();
+                    for (int i = 0; i < val.Length; i++)
+                    {
+                        if (openning.IndexOf(val[i]) != -1)
+                            stack.Push(val[i]);
+                        else if (closing.IndexOf(val[i]) != -1)
+                        {
+                            if (stack.Count == 0)
+                            {
+                                return false;
+                            }
+                            if (closing.IndexOf(val[i]) != openning.IndexOf(stack.Pop()))
+                            {
+                                return false;
+                            }
+                        }
+                    }
+                if (!check)
+                {
+                    if (stack.Count == 0)
+                        return true;
+                    else
+                        return false;
+                }
+                return true;
+            }
             internal static int Op(char c)
             {
                 if (c == '+' || c == '-')
@@ -71,21 +102,7 @@ namespace DS_Proj3_Calulator
 
                 // pop all the operators from the 
                 while (stack.getSize() > 0)
-                {
-
                     result += stack.Pop();
-                }
-                try
-                {
-                    if (result.Contains("("))
-                        throw new Exception("PE");
-                }
-                catch(Exception)
-                {
-                    Console.WriteLine("ERROR_P");
-                    result = "";
-
-                }
                 return result;
 
             }
@@ -95,93 +112,106 @@ namespace DS_Proj3_Calulator
                 MyStack<string> stack = new MyStack<string>();
                 string tmp = "";
                 int i = 0;
-                while (i < phrase.Length)
+                try
                 {
-                    char c = phrase[i];
-                    if (char.IsLetterOrDigit(c))
+                    while (i < phrase.Length)
                     {
-                        while (c != ' ' && (char.IsLetterOrDigit(c) || c == '.'))
+                        char c = phrase[i];
+                        if (char.IsLetterOrDigit(c))
                         {
-                            try
+                            while (c != ' ' && (char.IsLetterOrDigit(c) || c == '.'))
                             {
-                                tmp += c;
-                                c = phrase[i + 1];
-                                i++;
+                                try
+                                {
+                                    tmp += c;
+                                    c = phrase[i + 1];
+                                    i++;
+                                }
+                                catch (Exception)
+                                {
+                                    i++;
+                                    break;
+                                }
+
                             }
-                            catch(Exception)
+                            stack.Push(tmp);
+                            Console.WriteLine("item is >> " + tmp);
+                            tmp = "";
+                        }
+                        else if (c != ' ')
+                        {
+                            if (c == '+')
                             {
-                                i++;
-                                break;
+                                double sec = double.Parse(stack.Pop());
+                                double frt = double.Parse(stack.Pop());
+                                stack.Push((frt + sec).ToString());
+                            }
+                            if (c == '✕' || c == '*')
+                            {
+                                double sec = double.Parse(stack.Pop());
+                                double frt = double.Parse(stack.Pop());
+                                stack.Push((frt * sec).ToString());
+                            }
+                            if (c == '-')
+                            {
+                                double sec = double.Parse(stack.Pop());
+                                double frt = double.Parse(stack.Pop());
+                                stack.Push((frt - sec).ToString());
+                            }
+                            if (c == '/' || c == '÷')
+                            {
+                                double sec = double.Parse(stack.Pop());
+                                double frt = double.Parse(stack.Pop());
+                                if(sec != 0)
+                                    stack.Push((frt / sec).ToString());
+                                else
+                                {
+                                    try { throw new Exception("/0"); }
+                                    catch (Exception) { Console.WriteLine("ERROR_/0"); return -123456.123456; }
+                                }
+                            }
+                            if (c == '^')
+                            {
+                                double sec = double.Parse(stack.Pop());
+                                double frt = double.Parse(stack.Pop());
+                                stack.Push(Math.Pow(frt, sec).ToString());
+                            }
+                            if (c == '√')
+                            {
+                                double frt = double.Parse(stack.Pop());
+                                stack.Push(Math.Sqrt(frt).ToString());
+                            }
+                            if (c == '$')
+                            {
+                                double frt = double.Parse(stack.Pop());
+                                stack.Push(Math.Sin(frt).ToString());
+                            }
+                            if (c == '#')
+                            {
+                                double frt = double.Parse(stack.Pop());
+                                stack.Push(Math.Cos(frt).ToString());
+                            }
+                            if (c == '%')
+                            {
+                                double sec = double.Parse(stack.Pop());
+                                double frt = double.Parse(stack.Pop());
+                                stack.Push((frt / 100 * sec).ToString());
                             }
 
+                            i++;
                         }
-                        stack.Push(tmp);
-                        Console.WriteLine("item is >> " + tmp);
-                        tmp = "";
+                        else if (c == ' ')
+                            i++;
                     }
-                    else if (c != ' ')
-                    {
-                        if (c == '+')
-                        {
-                            double sec = double.Parse(stack.Pop());
-                            double frt = double.Parse(stack.Pop());
-                            stack.Push((frt + sec).ToString());
-                        }
-                        if (c == '✕' || c == '*')
-                        {
-                            double sec = double.Parse(stack.Pop());
-                            double frt = double.Parse(stack.Pop());
-                            stack.Push((frt * sec).ToString());
-                        }
-                        if (c == '-')
-                        {
-                            double sec = double.Parse(stack.Pop());
-                            double frt = double.Parse(stack.Pop());
-                            stack.Push((frt - sec).ToString());
-                        }
-                        if (c == '/' || c== '÷')
-                        {
-                            double sec = double.Parse(stack.Pop());
-                            double frt = double.Parse(stack.Pop());
-                            stack.Push((frt / sec).ToString());
-                        }
-                        if (c == '^')
-                        {
-                            double sec = double.Parse(stack.Pop());
-                            double frt = double.Parse(stack.Pop());
-                            stack.Push(Math.Pow(frt , sec).ToString());
-                        }
-                        if (c == '√')
-                        {
-                            double frt = double.Parse(stack.Pop());
-                            stack.Push(Math.Sqrt(frt).ToString());
-                        }
-                        if (c == '$')
-                        {
-                            double frt = double.Parse(stack.Pop());
-                            stack.Push(Math.Sin(frt).ToString());
-                        }
-                        if (c == '#')
-                        {
-                            double frt = double.Parse(stack.Pop());
-                            stack.Push(Math.Cos(frt).ToString());
-                        }
-                        if (c == '%')
-                        {
-                            double sec = double.Parse(stack.Pop());
-                            double frt = double.Parse(stack.Pop());
-                            stack.Push((frt / 100 * sec).ToString());
-                        }
 
-                        i++;
-                    }
-                    else if (c == ' ')
-                        i++;
+                    Console.WriteLine("The result is >> " + double.Parse(stack.Peek()));
+                    return double.Parse(stack.Pop());
                 }
-
-                Console.WriteLine("The result is >> " + double.Parse(stack.Peek()));
-                return double.Parse(stack.Pop());
-
+                catch (Exception)
+                {
+                    Console.WriteLine("Stack is Empty");
+                    return -123456.123456;
+                }
             }
         }
     }

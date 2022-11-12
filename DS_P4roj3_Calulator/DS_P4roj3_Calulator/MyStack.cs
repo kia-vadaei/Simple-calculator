@@ -34,30 +34,14 @@ namespace DS_Proj3_Calculator
     }
     public T Peek()
     {
-            try
-            {
-                if (!this.isEmpty())
-                    return data[top];
-                else
-                    throw new Exception("Null");
-            }
-            catch(Exception)
-            {
-                Console.WriteLine("Stack is Empty");
-                return data[0];
-            }
+            if (!this.isEmpty())
+                return data[top];
+            else
+                throw new Exception("Stack is Empty");
     }
     public T Pop()
     {
-            try
-            {
-                if (this.isEmpty()) throw new Exception("Null");
-            }
-            catch(Exception)
-            {
-                Console.WriteLine("Stack is Empty");
-                return data[0];
-            }
+            if (this.isEmpty()) throw new Exception("Null");
       T answer;
       answer = data[top];
       //data[top] = null ;
