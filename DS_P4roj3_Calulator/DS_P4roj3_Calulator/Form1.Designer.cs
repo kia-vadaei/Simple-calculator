@@ -138,7 +138,7 @@
             this.display_txt1.Font = new System.Drawing.Font("Gadugi", 30F, System.Drawing.FontStyle.Bold);
             this.display_txt1.ForeColor = System.Drawing.Color.Silver;
             this.display_txt1.Location = new System.Drawing.Point(0, 40);
-            this.display_txt1.MaxLength = 14;
+            this.display_txt1.MaxLength = 20;
             this.display_txt1.Multiline = true;
             this.display_txt1.Name = "display_txt1";
             this.display_txt1.Size = new System.Drawing.Size(350, 75);
@@ -157,6 +157,7 @@
             this.display_txt2.Location = new System.Drawing.Point(0, 115);
             this.display_txt2.Multiline = true;
             this.display_txt2.Name = "display_txt2";
+            this.display_txt2.ReadOnly = true;
             this.display_txt2.Size = new System.Drawing.Size(350, 50);
             this.display_txt2.TabIndex = 3;
             this.display_txt2.Text = "0";
@@ -224,6 +225,7 @@
             this.button5.TabIndex = 7;
             this.button5.Text = "%";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.num_click);
             // 
             // button6
             // 
@@ -239,6 +241,7 @@
             this.button6.TabIndex = 11;
             this.button6.Text = "Sin";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.num_click);
             // 
             // button7
             // 

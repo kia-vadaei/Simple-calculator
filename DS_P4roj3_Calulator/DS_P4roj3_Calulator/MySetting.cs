@@ -16,9 +16,9 @@ namespace DS_Proj3_Calulator
             {
                 if (c == '+' || c == '-')
                     return 1;
-                if (c == '*' || c == '✕' || c == '/')
+                if (c == '*' || c == '✕' || c == '/' || c == '%')
                     return 2;
-                if (c == '^' || c == '√')
+                if (c == '^' || c == '√' || c == '$' || c == '#')
                     return 3;
                 return -1;
             }
@@ -61,6 +61,7 @@ namespace DS_Proj3_Calulator
                     {
                         if (c == ' ')
                             continue;
+                        
                         while (stack.getSize() > 0 && Op(c) <= Op(stack.Peek()))
                             result += stack.Pop();
                         result += ' ';
@@ -68,11 +69,25 @@ namespace DS_Proj3_Calulator
                     }
                 }
 
-                // pop all the operators from the stack
+                // pop all the operators from the 
                 while (stack.getSize() > 0)
-                    result += stack.Pop();
+                {
 
+                    result += stack.Pop();
+                }
+                try
+                {
+                    if (result.Contains("("))
+                        throw new Exception("PE");
+                }
+                catch(Exception)
+                {
+                    Console.WriteLine("ERROR_P");
+                    result = "";
+
+                }
                 return result;
+
             }
 
             public static double calcute(string phrase)
@@ -87,9 +102,18 @@ namespace DS_Proj3_Calulator
                     {
                         while (c != ' ' && (char.IsLetterOrDigit(c) || c == '.'))
                         {
-                            tmp += c;
-                            c = phrase[i + 1];
-                            i++;
+                            try
+                            {
+                                tmp += c;
+                                c = phrase[i + 1];
+                                i++;
+                            }
+                            catch(Exception)
+                            {
+                                i++;
+                                break;
+                            }
+
                         }
                         stack.Push(tmp);
                         Console.WriteLine("item is >> " + tmp);
@@ -131,6 +155,22 @@ namespace DS_Proj3_Calulator
                         {
                             double frt = double.Parse(stack.Pop());
                             stack.Push(Math.Sqrt(frt).ToString());
+                        }
+                        if (c == '$')
+                        {
+                            double frt = double.Parse(stack.Pop());
+                            stack.Push(Math.Sin(frt).ToString());
+                        }
+                        if (c == '#')
+                        {
+                            double frt = double.Parse(stack.Pop());
+                            stack.Push(Math.Cos(frt).ToString());
+                        }
+                        if (c == '%')
+                        {
+                            double sec = double.Parse(stack.Pop());
+                            double frt = double.Parse(stack.Pop());
+                            stack.Push((frt / 100 * sec).ToString());
                         }
 
                         i++;

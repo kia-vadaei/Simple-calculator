@@ -1,4 +1,5 @@
-﻿using DS_Proj3_Calculator;
+﻿using DevComponents.Editors;
+using DS_Proj3_Calculator;
 using DS_Proj3_Calulator;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,8 @@ namespace DS_P4roj3_Calulator
 
     }
 
+
+
         private void num_click(object sender, EventArgs e)
         {
             if (display_txt1.Text.Length < 14)
@@ -49,11 +52,11 @@ namespace DS_P4roj3_Calulator
                     if (!display_txt1.Text.Contains("."))
                         display_txt1.Text = display_txt1.Text + btn.Text;
                 }
-                else if (btn.Text == "^" || btn.Text == "✕" || btn.Text == "÷" || btn.Text == "+" || btn.Text == "-")
+                else if (btn.Text == "%" || btn.Text == "^" || btn.Text == "✕" || btn.Text == "÷" || btn.Text == "+" || btn.Text == "-")
                 {
                     try
                     {
-                        if (display_txt1.Text.Last() != '^' && display_txt1.Text.Last() != '✕' && display_txt1.Text.Last() != '÷' && display_txt1.Text.Last() != '+' && display_txt1.Text.Last() != '-' && display_txt1.Text != "0")
+                        if (display_txt1.Text.Last() != '%' && display_txt1.Text.Last() != '^' && display_txt1.Text.Last() != '✕' && display_txt1.Text.Last() != '÷' && display_txt1.Text.Last() != '+' && display_txt1.Text.Last() != '-' && display_txt1.Text != "0")
                             display_txt1.Text = display_txt1.Text + btn.Text;
                     }
                     catch (Exception)
@@ -77,11 +80,23 @@ namespace DS_P4roj3_Calulator
                 {
                     phrase = display_txt1.Text;
                     phrase = MySetting.MySettings.infToPos(phrase);
-                    Console.WriteLine("Postfix is >> " + phrase);
-
-                    result = MySetting.MySettings.calcute(phrase);
-                    display_txt2.Text = result.ToString();
-
+                    if (phrase != "")
+                    {
+                        Console.WriteLine("Postfix is >> " + phrase);
+                        result = MySetting.MySettings.calcute(phrase);
+                        Console.WriteLine(result);
+                        if (result.ToString().Length > 14)
+                            display_txt2.Text = result.ToString().Substring(0, 14);
+                        else
+                            display_txt2.Text = result.ToString();
+                    }
+                    else
+                    {
+                        display_txt1.Text = "0";
+                        display_txt2.Text = "0";
+                        p_check = -1;
+                    } 
+                        
                 }
                 else if (btn.Text == "()")
                 {
@@ -117,6 +132,31 @@ namespace DS_P4roj3_Calulator
 
                     display_txt1.Text = "0";
                     display_txt2.Text = "0";
+                    p_check = -1;
+                }
+                else if (btn.Text == "Sin")
+                {
+                    try
+                    {
+                        if (display_txt1.Text.Last() != '$') // & is sin
+                            display_txt1.Text += "$";
+                    }
+                    catch (Exception)
+                    {
+                        display_txt1.Text = "$";
+                    }
+                }
+                else if (btn.Text == "Cos")
+                {
+                    try
+                    {
+                        if (display_txt1.Text.Last() != '#') // # is Cos
+                            display_txt1.Text += "#";
+                    }
+                    catch (Exception)
+                    {
+                        display_txt1.Text = "#";
+                    }
                 }
 
                 else
