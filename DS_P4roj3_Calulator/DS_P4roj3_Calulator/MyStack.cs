@@ -41,6 +41,7 @@ namespace DS_Proj3_Calculator
     }
     public T Pop()
     {
+
       if (this.isEmpty()) throw new Exception("Null");
       T answer;
       answer = data[top];

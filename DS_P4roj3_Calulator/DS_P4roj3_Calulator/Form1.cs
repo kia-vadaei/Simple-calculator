@@ -9,7 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace DS_P4roj3_Calulator
 {
     public partial class Form1 : Form
@@ -19,6 +18,7 @@ namespace DS_P4roj3_Calulator
         double result = 0;
         string operation = "";
         string fstNum, secNum;
+        int p_check = -1;
         bool enterValue = false;
         MyStack<char> stack = new MyStack<char>(); 
         public Form1()
@@ -36,7 +36,6 @@ namespace DS_P4roj3_Calulator
 
     }
 
-
         private void num_click(object sender, EventArgs e)
         {
             if (display_txt1.Text.Length < 14)
@@ -50,16 +49,17 @@ namespace DS_P4roj3_Calulator
                     if (!display_txt1.Text.Contains("."))
                         display_txt1.Text = display_txt1.Text + btn.Text;
                 }
-                else if (btn.Text == "✕" || btn.Text == "÷" || btn.Text == "+" || btn.Text == "-")
+                else if (btn.Text == "^" || btn.Text == "✕" || btn.Text == "÷" || btn.Text == "+" || btn.Text == "-")
                 {
                     try
                     {
-                        if (display_txt1.Text.Last() != '✕' && display_txt1.Text.Last() != '÷' && display_txt1.Text.Last() != '+' && display_txt1.Text.Last() != '-' && display_txt1.Text != "0")
+                        if (display_txt1.Text.Last() != '^' && display_txt1.Text.Last() != '✕' && display_txt1.Text.Last() != '÷' && display_txt1.Text.Last() != '+' && display_txt1.Text.Last() != '-' && display_txt1.Text != "0")
                             display_txt1.Text = display_txt1.Text + btn.Text;
                     }
                     catch (Exception)
                     {
-                        Console.WriteLine("!");
+                        Console.WriteLine("Error!. display is Empty");
+                        display_txt1.Text = "0";
                     }
                 }
                 else if (btn.Name == "CE_butt")
@@ -77,11 +77,46 @@ namespace DS_P4roj3_Calulator
                 {
                     phrase = display_txt1.Text;
                     phrase = MySetting.MySettings.infToPos(phrase);
-                    Console.WriteLine(phrase);
+                    Console.WriteLine("Postfix is >> " + phrase);
 
                     result = MySetting.MySettings.calcute(phrase);
                     display_txt2.Text = result.ToString();
 
+                }
+                else if (btn.Text == "()")
+                {
+                    if (p_check < 0)
+                    {
+                        display_txt1.Text += "(";
+                        p_check *= -1;
+                    }
+                    else
+                    {
+                        display_txt1.Text += ")";
+                        p_check *= -1;
+                    }
+
+                }
+                else if (btn.Text == "√x")
+                {
+                    try
+                    {
+                        if (display_txt1.Text.Last() != '√')
+                            display_txt1.Text += "√";
+                    }
+                    catch(Exception)
+                    {
+                        display_txt1.Text = "√";
+                    }
+                    
+                }
+                else if (btn.Text == "C")
+                {
+                    display_txt1.Clear();
+                    display_txt2.Clear();
+
+                    display_txt1.Text = "0";
+                    display_txt2.Text = "0";
                 }
 
                 else

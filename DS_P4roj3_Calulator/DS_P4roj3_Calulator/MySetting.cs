@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 namespace DS_Proj3_Calulator
 {
     internal class MySetting
-    {
+    { 
         public class MySettings
         {
             internal static int Op(char c)
             {
                 if (c == '+' || c == '-')
                     return 1;
-                if (c == '*' || c == '/')
+                if (c == '*' || c == '✕' || c == '/')
                     return 2;
-                if (c == '^')
+                if (c == '^' || c == '√')
                     return 3;
                 return -1;
             }
@@ -35,7 +35,7 @@ namespace DS_Proj3_Calulator
                 {
                     char c = str[i];
 
-                    if (char.IsLetterOrDigit(c))
+                    if (char.IsLetterOrDigit(c) || c == '.')
                         result += c;
 
                     else if (c == '(')
@@ -85,13 +85,14 @@ namespace DS_Proj3_Calulator
                     char c = phrase[i];
                     if (char.IsLetterOrDigit(c))
                     {
-                        while (c != ' ' && char.IsLetterOrDigit(c))
+                        while (c != ' ' && (char.IsLetterOrDigit(c) || c == '.'))
                         {
                             tmp += c;
                             c = phrase[i + 1];
                             i++;
                         }
                         stack.Push(tmp);
+                        Console.WriteLine("item is >> " + tmp);
                         tmp = "";
                     }
                     else if (c != ' ')
@@ -120,6 +121,17 @@ namespace DS_Proj3_Calulator
                             double frt = double.Parse(stack.Pop());
                             stack.Push((frt / sec).ToString());
                         }
+                        if (c == '^')
+                        {
+                            double sec = double.Parse(stack.Pop());
+                            double frt = double.Parse(stack.Pop());
+                            stack.Push(Math.Pow(frt , sec).ToString());
+                        }
+                        if (c == '√')
+                        {
+                            double frt = double.Parse(stack.Pop());
+                            stack.Push(Math.Sqrt(frt).ToString());
+                        }
 
                         i++;
                     }
@@ -127,7 +139,7 @@ namespace DS_Proj3_Calulator
                         i++;
                 }
 
-                Console.WriteLine(double.Parse(stack.Peek()));
+                Console.WriteLine("The result is >> " + double.Parse(stack.Peek()));
                 return double.Parse(stack.Pop());
 
             }

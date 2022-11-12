@@ -192,6 +192,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "C";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.num_click);
             // 
             // button4
             // 
@@ -205,8 +206,9 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(85, 55);
             this.button4.TabIndex = 6;
-            this.button4.Text = "CE";
+            this.button4.Text = "()";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.num_click);
             // 
             // button5
             // 
@@ -235,7 +237,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(85, 55);
             this.button6.TabIndex = 11;
-            this.button6.Text = "⅟ x";
+            this.button6.Text = "Sin";
             this.button6.UseVisualStyleBackColor = false;
             // 
             // button7
@@ -250,8 +252,9 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(85, 55);
             this.button7.TabIndex = 10;
-            this.button7.Text = "^2";
+            this.button7.Text = "Cos";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.num_click);
             // 
             // button8
             // 
@@ -267,6 +270,7 @@
             this.button8.TabIndex = 9;
             this.button8.Text = "√x";
             this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.num_click);
             // 
             // button9
             // 
@@ -488,8 +492,9 @@
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(85, 55);
             this.button22.TabIndex = 27;
-            this.button22.Text = "0";
+            this.button22.Text = "^";
             this.button22.UseVisualStyleBackColor = false;
+            this.button22.Click += new System.EventHandler(this.num_click);
             // 
             // button23
             // 
