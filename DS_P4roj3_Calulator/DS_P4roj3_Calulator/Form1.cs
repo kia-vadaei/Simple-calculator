@@ -21,14 +21,14 @@ namespace DS_P4roj3_Calulator
 
         string phrase = string.Empty;
         double result = 0;
-        string operation = "";
-        string fstNum, secNum;
         int p_check = -1;
         bool enterValue = false;
         MyStack<char> stack = new MyStack<char>(); 
         public Form1()
         {
             InitializeComponent();
+            Console.SetWindowSize(40, 30);
+            Console.ForegroundColor = ConsoleColor.Green;
         }
 
         private void xit_butt_Click(object sender, EventArgs e)
@@ -37,10 +37,10 @@ namespace DS_P4roj3_Calulator
         }
 
         private void Form1_Load(object sender, EventArgs e)
-    {
+        {
 
-    }
 
+        }
 
 
         private void num_click(object sender, EventArgs e)
@@ -51,6 +51,7 @@ namespace DS_P4roj3_Calulator
                     display_txt1.Text = "";
                 enterValue = false;
                 Button btn = (Button)sender;
+
                 if (btn.Text == ".")
                 {
                     if (!display_txt1.Text.Contains("."))
@@ -92,7 +93,7 @@ namespace DS_P4roj3_Calulator
                         }
                         catch (Exception)
                         {
-                            Console.WriteLine("ERROR_P");
+                            Console.WriteLine("ERROR_P" + "\n########################################");
                             display_txt1.Text = "0";
                             display_txt2.Text = "0";
                             p_check = -1;
@@ -103,7 +104,7 @@ namespace DS_P4roj3_Calulator
                         phrase = MySetting.MySettings.infToPos(phrase);
                         Console.WriteLine("Postfix is >> " + phrase);
                         result = MySetting.MySettings.calcute(phrase);
-                        Console.WriteLine(result);
+                        //Console.WriteLine(result);
                         if (result != -123456.123456)
                         {
                             if (result.ToString().Length > 14)
@@ -113,7 +114,7 @@ namespace DS_P4roj3_Calulator
                         }
                         else
                         {
-                            Console.WriteLine("ERROR_OP");
+                            Console.WriteLine("ERROR_Op" + "\n########################################");
                             display_txt1.Text = "0";
                             display_txt2.Text = "0";
                             p_check = -1;
@@ -164,11 +165,11 @@ namespace DS_P4roj3_Calulator
                     try
                     {
                         if (display_txt1.Text.Last() != '$') // & is sin
-                            display_txt1.Text += "$";
+                            display_txt1.Text += "$(";
                     }
                     catch (Exception)
                     {
-                        display_txt1.Text = "$";
+                        display_txt1.Text = "$(";
                     }
                 }
                 else if (btn.Text == "Cos")
@@ -176,11 +177,11 @@ namespace DS_P4roj3_Calulator
                     try
                     {
                         if (display_txt1.Text.Last() != '#') // # is Cos
-                            display_txt1.Text += "#";
+                            display_txt1.Text += "#(";
                     }
                     catch (Exception)
                     {
-                        display_txt1.Text = "#";
+                        display_txt1.Text = "#(";
                     }
                 }
 

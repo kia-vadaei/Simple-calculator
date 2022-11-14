@@ -138,7 +138,7 @@
             this.display_txt1.Font = new System.Drawing.Font("Gadugi", 30F, System.Drawing.FontStyle.Bold);
             this.display_txt1.ForeColor = System.Drawing.Color.Silver;
             this.display_txt1.Location = new System.Drawing.Point(0, 40);
-            this.display_txt1.MaxLength = 20;
+            this.display_txt1.MaxLength = 25;
             this.display_txt1.Multiline = true;
             this.display_txt1.Name = "display_txt1";
             this.display_txt1.Size = new System.Drawing.Size(350, 75);
@@ -172,7 +172,7 @@
             this.CE_butt.Font = new System.Drawing.Font("Gadugi", 13F);
             this.CE_butt.ForeColor = System.Drawing.Color.Silver;
             this.CE_butt.Image = ((System.Drawing.Image)(resources.GetObject("CE_butt.Image")));
-            this.CE_butt.Location = new System.Drawing.Point(264, 217);
+            this.CE_butt.Location = new System.Drawing.Point(264, 220);
             this.CE_butt.Name = "CE_butt";
             this.CE_butt.Size = new System.Drawing.Size(85, 55);
             this.CE_butt.TabIndex = 4;
@@ -187,7 +187,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Gadugi", 13F);
             this.button2.ForeColor = System.Drawing.Color.Silver;
-            this.button2.Location = new System.Drawing.Point(176, 217);
+            this.button2.Location = new System.Drawing.Point(176, 220);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 55);
             this.button2.TabIndex = 5;
@@ -203,7 +203,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Gadugi", 13F);
             this.button4.ForeColor = System.Drawing.Color.Silver;
-            this.button4.Location = new System.Drawing.Point(88, 217);
+            this.button4.Location = new System.Drawing.Point(88, 220);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(85, 55);
             this.button4.TabIndex = 6;
@@ -219,7 +219,7 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Gadugi", 13F);
             this.button5.ForeColor = System.Drawing.Color.Silver;
-            this.button5.Location = new System.Drawing.Point(0, 217);
+            this.button5.Location = new System.Drawing.Point(0, 220);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(85, 55);
             this.button5.TabIndex = 7;
@@ -235,7 +235,7 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Gadugi", 13F);
             this.button6.ForeColor = System.Drawing.Color.Silver;
-            this.button6.Location = new System.Drawing.Point(0, 275);
+            this.button6.Location = new System.Drawing.Point(0, 278);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(85, 55);
             this.button6.TabIndex = 11;
@@ -251,7 +251,7 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Gadugi", 13F);
             this.button7.ForeColor = System.Drawing.Color.Silver;
-            this.button7.Location = new System.Drawing.Point(88, 275);
+            this.button7.Location = new System.Drawing.Point(88, 278);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(85, 55);
             this.button7.TabIndex = 10;
@@ -267,7 +267,7 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Gadugi", 13F);
             this.button8.ForeColor = System.Drawing.Color.Silver;
-            this.button8.Location = new System.Drawing.Point(176, 275);
+            this.button8.Location = new System.Drawing.Point(176, 278);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(85, 55);
             this.button8.TabIndex = 9;
@@ -283,7 +283,7 @@
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Gadugi", 16F);
             this.button9.ForeColor = System.Drawing.Color.Silver;
-            this.button9.Location = new System.Drawing.Point(264, 275);
+            this.button9.Location = new System.Drawing.Point(264, 278);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(85, 55);
             this.button9.TabIndex = 8;
@@ -299,7 +299,7 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Gadugi", 13F);
             this.button10.ForeColor = System.Drawing.Color.Silver;
-            this.button10.Location = new System.Drawing.Point(0, 391);
+            this.button10.Location = new System.Drawing.Point(0, 394);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(85, 55);
             this.button10.TabIndex = 19;
@@ -315,7 +315,7 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Gadugi", 13F);
             this.button11.ForeColor = System.Drawing.Color.Silver;
-            this.button11.Location = new System.Drawing.Point(88, 391);
+            this.button11.Location = new System.Drawing.Point(88, 394);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(85, 55);
             this.button11.TabIndex = 18;
@@ -331,7 +331,7 @@
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Gadugi", 13F);
             this.button12.ForeColor = System.Drawing.Color.Silver;
-            this.button12.Location = new System.Drawing.Point(176, 391);
+            this.button12.Location = new System.Drawing.Point(176, 394);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(85, 55);
             this.button12.TabIndex = 17;
@@ -347,7 +347,7 @@
             this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button13.Font = new System.Drawing.Font("Gadugi", 16F);
             this.button13.ForeColor = System.Drawing.Color.Silver;
-            this.button13.Location = new System.Drawing.Point(264, 391);
+            this.button13.Location = new System.Drawing.Point(264, 394);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(85, 55);
             this.button13.TabIndex = 16;
@@ -363,7 +363,7 @@
             this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button14.Font = new System.Drawing.Font("Gadugi", 13F);
             this.button14.ForeColor = System.Drawing.Color.Silver;
-            this.button14.Location = new System.Drawing.Point(0, 333);
+            this.button14.Location = new System.Drawing.Point(0, 336);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(85, 55);
             this.button14.TabIndex = 15;
@@ -379,7 +379,7 @@
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.Font = new System.Drawing.Font("Gadugi", 13F);
             this.button15.ForeColor = System.Drawing.Color.Silver;
-            this.button15.Location = new System.Drawing.Point(88, 333);
+            this.button15.Location = new System.Drawing.Point(88, 336);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(85, 55);
             this.button15.TabIndex = 14;
@@ -395,7 +395,7 @@
             this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button16.Font = new System.Drawing.Font("Gadugi", 13F);
             this.button16.ForeColor = System.Drawing.Color.Silver;
-            this.button16.Location = new System.Drawing.Point(176, 333);
+            this.button16.Location = new System.Drawing.Point(176, 336);
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(85, 55);
             this.button16.TabIndex = 13;
@@ -411,7 +411,7 @@
             this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button17.Font = new System.Drawing.Font("Gadugi", 13F);
             this.button17.ForeColor = System.Drawing.Color.Silver;
-            this.button17.Location = new System.Drawing.Point(264, 333);
+            this.button17.Location = new System.Drawing.Point(264, 336);
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(85, 55);
             this.button17.TabIndex = 12;
@@ -427,7 +427,7 @@
             this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button18.Font = new System.Drawing.Font("Gadugi", 13F);
             this.button18.ForeColor = System.Drawing.Color.Silver;
-            this.button18.Location = new System.Drawing.Point(0, 449);
+            this.button18.Location = new System.Drawing.Point(0, 452);
             this.button18.Name = "button18";
             this.button18.Size = new System.Drawing.Size(85, 55);
             this.button18.TabIndex = 23;
@@ -443,7 +443,7 @@
             this.button19.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button19.Font = new System.Drawing.Font("Gadugi", 13F);
             this.button19.ForeColor = System.Drawing.Color.Silver;
-            this.button19.Location = new System.Drawing.Point(88, 449);
+            this.button19.Location = new System.Drawing.Point(88, 452);
             this.button19.Name = "button19";
             this.button19.Size = new System.Drawing.Size(85, 55);
             this.button19.TabIndex = 22;
@@ -459,7 +459,7 @@
             this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button20.Font = new System.Drawing.Font("Gadugi", 13F);
             this.button20.ForeColor = System.Drawing.Color.Silver;
-            this.button20.Location = new System.Drawing.Point(176, 449);
+            this.button20.Location = new System.Drawing.Point(176, 452);
             this.button20.Name = "button20";
             this.button20.Size = new System.Drawing.Size(85, 55);
             this.button20.TabIndex = 21;
@@ -475,7 +475,7 @@
             this.button21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button21.Font = new System.Drawing.Font("Gadugi", 16F);
             this.button21.ForeColor = System.Drawing.Color.Silver;
-            this.button21.Location = new System.Drawing.Point(264, 449);
+            this.button21.Location = new System.Drawing.Point(264, 452);
             this.button21.Name = "button21";
             this.button21.Size = new System.Drawing.Size(85, 55);
             this.button21.TabIndex = 20;
@@ -491,7 +491,7 @@
             this.button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button22.Font = new System.Drawing.Font("Gadugi", 13F);
             this.button22.ForeColor = System.Drawing.Color.Silver;
-            this.button22.Location = new System.Drawing.Point(0, 507);
+            this.button22.Location = new System.Drawing.Point(0, 510);
             this.button22.Name = "button22";
             this.button22.Size = new System.Drawing.Size(85, 55);
             this.button22.TabIndex = 27;
@@ -507,7 +507,7 @@
             this.button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button23.Font = new System.Drawing.Font("Gadugi", 13F);
             this.button23.ForeColor = System.Drawing.Color.Silver;
-            this.button23.Location = new System.Drawing.Point(88, 507);
+            this.button23.Location = new System.Drawing.Point(88, 510);
             this.button23.Name = "button23";
             this.button23.Size = new System.Drawing.Size(85, 55);
             this.button23.TabIndex = 26;
@@ -523,7 +523,7 @@
             this.button24.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button24.Font = new System.Drawing.Font("Gadugi", 13F);
             this.button24.ForeColor = System.Drawing.Color.Silver;
-            this.button24.Location = new System.Drawing.Point(176, 507);
+            this.button24.Location = new System.Drawing.Point(176, 510);
             this.button24.Name = "button24";
             this.button24.Size = new System.Drawing.Size(85, 55);
             this.button24.TabIndex = 25;
@@ -539,7 +539,7 @@
             this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button25.Font = new System.Drawing.Font("Gadugi", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button25.ForeColor = System.Drawing.Color.Black;
-            this.button25.Location = new System.Drawing.Point(264, 507);
+            this.button25.Location = new System.Drawing.Point(264, 510);
             this.button25.Name = "button25";
             this.button25.Size = new System.Drawing.Size(85, 55);
             this.button25.TabIndex = 24;

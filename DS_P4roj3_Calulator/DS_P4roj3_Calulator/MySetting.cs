@@ -34,14 +34,11 @@ namespace DS_Proj3_Calulator
                             }
                         }
                     }
-                if (!check)
-                {
                     if (stack.Count == 0)
                         return true;
                     else
                         return false;
-                }
-                return true;
+                
             }
             internal static int Op(char c)
             {
@@ -145,18 +142,23 @@ namespace DS_Proj3_Calulator
                                 double sec = double.Parse(stack.Pop());
                                 double frt = double.Parse(stack.Pop());
                                 stack.Push((frt + sec).ToString());
+                                Console.WriteLine(">>> " + frt + " " + sec + " " + c);
                             }
                             if (c == '✕' || c == '*')
                             {
                                 double sec = double.Parse(stack.Pop());
                                 double frt = double.Parse(stack.Pop());
                                 stack.Push((frt * sec).ToString());
+                                Console.WriteLine(">>> " + frt + " " + sec + " " + c);
+
                             }
                             if (c == '-')
                             {
                                 double sec = double.Parse(stack.Pop());
                                 double frt = double.Parse(stack.Pop());
                                 stack.Push((frt - sec).ToString());
+                                Console.WriteLine(">>> " + frt + " " + sec + " " + c);
+
                             }
                             if (c == '/' || c == '÷')
                             {
@@ -169,33 +171,40 @@ namespace DS_Proj3_Calulator
                                     try { throw new Exception("/0"); }
                                     catch (Exception) { Console.WriteLine("ERROR_/0"); return -123456.123456; }
                                 }
+                                Console.WriteLine(">>> " + frt + " " + sec + " " + c);
+
                             }
                             if (c == '^')
                             {
                                 double sec = double.Parse(stack.Pop());
                                 double frt = double.Parse(stack.Pop());
                                 stack.Push(Math.Pow(frt, sec).ToString());
+                                Console.WriteLine(">>> " + frt + " " + sec + " " + c);
                             }
                             if (c == '√')
                             {
                                 double frt = double.Parse(stack.Pop());
                                 stack.Push(Math.Sqrt(frt).ToString());
+                                Console.WriteLine(">>> " + frt + " " + c);
                             }
                             if (c == '$')
                             {
                                 double frt = double.Parse(stack.Pop());
                                 stack.Push(Math.Sin(frt).ToString());
+                                Console.WriteLine(">>> " + frt + " " + c);
                             }
                             if (c == '#')
                             {
                                 double frt = double.Parse(stack.Pop());
                                 stack.Push(Math.Cos(frt).ToString());
+                                Console.WriteLine(">>> " + frt + " " + c);
                             }
                             if (c == '%')
                             {
                                 double sec = double.Parse(stack.Pop());
                                 double frt = double.Parse(stack.Pop());
-                                stack.Push((frt / 100 * sec).ToString());
+                                stack.Push(((frt / 100) * sec).ToString());
+                                Console.WriteLine(">>> " + frt + " " + sec + " " + c);
                             }
 
                             i++;
@@ -204,7 +213,7 @@ namespace DS_Proj3_Calulator
                             i++;
                     }
 
-                    Console.WriteLine("The result is >> " + double.Parse(stack.Peek()));
+                    Console.WriteLine("The result is >> " + double.Parse(stack.Peek())  + "\n########################################");
                     return double.Parse(stack.Pop());
                 }
                 catch (Exception)

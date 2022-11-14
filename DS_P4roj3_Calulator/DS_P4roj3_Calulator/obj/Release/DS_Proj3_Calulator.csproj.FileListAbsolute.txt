@@ -1,0 +1,14 @@
+D:\Private\uni\Coding\Calculator\project-3-Hsoonaik\DS_P4roj3_Calulator\DS_P4roj3_Calulator\bin\Release\DS_Proj3_Calulator.exe.config
+D:\Private\uni\Coding\Calculator\project-3-Hsoonaik\DS_P4roj3_Calulator\DS_P4roj3_Calulator\bin\Release\DS_Proj3_Calulator.exe
+D:\Private\uni\Coding\Calculator\project-3-Hsoonaik\DS_P4roj3_Calulator\DS_P4roj3_Calulator\bin\Release\DS_Proj3_Calulator.pdb
+D:\Private\uni\Coding\Calculator\project-3-Hsoonaik\DS_P4roj3_Calulator\DS_P4roj3_Calulator\bin\Release\DevComponents.DotNetBar2.dll
+D:\Private\uni\Coding\Calculator\project-3-Hsoonaik\DS_P4roj3_Calulator\DS_P4roj3_Calulator\bin\Release\DevComponents.DotNetBar2.xml
+D:\Private\uni\Coding\Calculator\project-3-Hsoonaik\DS_P4roj3_Calulator\DS_P4roj3_Calulator\obj\Release\DS_Proj3_Calulator.csproj.AssemblyReference.cache
+D:\Private\uni\Coding\Calculator\project-3-Hsoonaik\DS_P4roj3_Calulator\DS_P4roj3_Calulator\obj\Release\DS_Proj3_Calulator.csproj.SuggestedBindingRedirects.cache
+D:\Private\uni\Coding\Calculator\project-3-Hsoonaik\DS_P4roj3_Calulator\DS_P4roj3_Calulator\obj\Release\DS_P4roj3_Calulator.Form1.resources
+D:\Private\uni\Coding\Calculator\project-3-Hsoonaik\DS_P4roj3_Calulator\DS_P4roj3_Calulator\obj\Release\DS_Proj3_Calulator.Properties.Resources.resources
+D:\Private\uni\Coding\Calculator\project-3-Hsoonaik\DS_P4roj3_Calulator\DS_P4roj3_Calulator\obj\Release\DS_Proj3_Calulator.csproj.GenerateResource.cache
+D:\Private\uni\Coding\Calculator\project-3-Hsoonaik\DS_P4roj3_Calulator\DS_P4roj3_Calulator\obj\Release\DS_Proj3_Calulator.csproj.CoreCompileInputs.cache
+D:\Private\uni\Coding\Calculator\project-3-Hsoonaik\DS_P4roj3_Calulator\DS_P4roj3_Calulator\obj\Release\DS_Proj3_Calulator.csproj.CopyComplete
+D:\Private\uni\Coding\Calculator\project-3-Hsoonaik\DS_P4roj3_Calulator\DS_P4roj3_Calulator\obj\Release\DS_Proj3_Calulator.exe
+D:\Private\uni\Coding\Calculator\project-3-Hsoonaik\DS_P4roj3_Calulator\DS_P4roj3_Calulator\obj\Release\DS_Proj3_Calulator.pdb
