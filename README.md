@@ -10,9 +10,8 @@ In the name of the Lord who guides to the right path
    The third project - calculator
 
 
-<img src="https://s25.picofile.com/file/8455118076/Picture55.png" hieght="500"/>
+<img src="https://s28.picofile.com/file/8462128726/se.png" height="500"/>
   
-   Project designers: Amir Ali Goli - Mohammad Tawakli - Alireza Sai - Hossein Aliturkan
 </div>
 
 
